@@ -1,3 +1,55 @@
 <!--index.wxml-->
+<scroll-x scrollData="{{scrollData}}" title="{{title}}" bind:setScrollItem="setScrollItem"></scroll-x>
 
-<view>hello work</view>
+<view style="margin-top:90rpx;" class="ssss">
+  <view class="vip-item active">
+    <view class="vip-item-top">白银会员</view>
+    <view class="vip-item-bottom">
+      <view class="vip-item-title">原件</view>
+      <view class="vip-item-price">28.00</view>
+    </view>
+  </view>
+  <view class="vip-item">
+    <view class="vip-item-top">白银会员</view>
+    <view class="vip-item-bottom">
+      <view class="vip-item-title">原件</view>
+      <view class="vip-item-price">28.00</view>
+    </view>
+  </view>
+  <view class="vip-item ">
+    <view class="vip-item-top">白银会员</view>
+    <view class="vip-item-bottom">
+      <view class="vip-item-title">原件</view>
+      <view class="vip-item-price">28.00</view>
+    </view>
+  </view>
+</view>
+<view class="product-con">
+  <view class="superior" wx:if="{{good_list.length}}">
+      <view class="title acea-row row-center-wrapper">
+        <image src="/images/ling.png"></image>
+        <view class="titleTxt">优品推荐</view>
+        <image src="/images/ling.png"></image>
+      </view>
+      <view class="slider-banner banner">
+        <swiper indicator-dots="true"
+            autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#999" indicator-active-color="#e93323" style="height:{{clientHeight+'px'}}">
+          <swiper-item wx:for="{{good_list}}" wx:for-item='item' wx:key>
+            <view class="list acea-row row-middle" id="list">
+              <view class="item" wx:for="{{item.list}}" wx:key wx:for-item='val'>
+                <navigator url='/pages/goods_details/index?id={{val.id}}' hover-class='none'>
+                  <view class="pictrue">
+                    <image src="{{val.image}}"></image>
+                  </view>
+                  <view class="name line1">{{val.store_name}}</view>
+                  <view class="money font-color">¥{{val.price}}</view>
+                </navigator>
+              </view>
+            </view>
+          </swiper-item>
+          <view class="swiper-pagination" slot="pagination"></view>
+        </swiper>
+      </view>
+    </view>
+
+</view>

@@ -1,0 +1,11 @@
+<!--components/scroll-x/scroll-x.wxml-->
+<view class="scroll-x-top" >
+  <scroll-view class="scroll-view_H" style="top:0rpx;" scroll-x="{{true}}">
+    <view class="list">        
+      <view wx:for="{{scrollData}}"  class="scroll-item {{index === currentIndex ? 'active':''}}" wx:key="{{index}}" bindtap='setScrollItem' data-scrollindex="{{index}}">
+        <view class="scroll-x-title">{{item.title}}</view>
+        <view class="scroll-item-line"></view>
+      </view>
+    </view>
+  </scroll-view>
+ </view>

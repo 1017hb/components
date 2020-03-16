@@ -1,0 +1,35 @@
+.scroll-view_H{
+  background: #fff;
+  position: fixed;
+  z-index: 200;
+  top:0;
+  left: 0;
+  height: 70rpx;
+  overflow-y: hidden;
+  box-shadow: 1rpx 1rpx 2rpx #cfcece;
+}
+.scroll-x-top .list{
+  white-space: nowrap;
+  position: relative;
+  height: 70rpx;
+  overflow:auto;
+  width:1200rpx;
+
+}
+.scroll-x-top .list  .scroll-item{
+  margin: 0 20rpx;
+ display: inline-block;
+ text-align: center;
+  font-size: 30rpx;
+}
+.scroll-x-top .list  .scroll-item.active .scroll-x-title{
+    font-size: 34rpx;
+    font-weight: bold;
+}
+.scroll-x-top .list  .scroll-item.active .scroll-item-line{
+  width: 40rpx;
+  height: 6rpx;
+  background-color: orange;
+  margin: 0 auto;
+  margin-top: 15rpx;
+}
